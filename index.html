@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #d97745 0%, #8f3d2e 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,7 +22,7 @@
         }
 
         .container {
-            background: white;
+            background: #fffaf3;
             border-radius: 15px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             padding: 40px;
@@ -40,36 +40,37 @@
         }
 
         .lang-btn {
-            background: #f0f0f0;
-            border: 2px solid #ddd;
+            background: #f4e7d8;
+            border: 2px solid #dfc8b3;
             padding: 6px 12px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.9em;
             font-weight: 600;
             transition: all 0.3s;
-            color: #666;
+            color: #765342;
         }
 
         .lang-btn.active {
-            background: #667eea;
+            background: #b94f2f;
             color: white;
-            border-color: #667eea;
+            border-color: #b94f2f;
         }
 
         .lang-btn:hover {
-            border-color: #667eea;
+            border-color: #b94f2f;
         }
 
         h1 {
-            color: #333;
+            color: #3d2d26;
+            margin-top: 25px;
             margin-bottom: 10px;
             text-align: center;
             font-size: 2.5em;
         }
 
         .subtitle {
-            color: #666;
+            color: #765342;
             text-align: center;
             margin-bottom: 30px;
             font-size: 1.1em;
@@ -82,7 +83,7 @@
 
         label {
             display: block;
-            color: #555;
+            color: #654d40;
             font-weight: 600;
             margin-bottom: 10px;
             font-size: 1.1em;
@@ -92,7 +93,7 @@
             width: 100%;
             padding: 12px 15px;
             font-size: 1.2em;
-            border: 2px solid #667eea;
+            border: 2px solid #b94f2f;
             border-radius: 8px;
             text-align: center;
             transition: border-color 0.3s;
@@ -100,12 +101,12 @@
 
         input[type="number"]:focus {
             outline: none;
-            border-color: #764ba2;
-            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+            border-color: #8f3d2e;
+            box-shadow: 0 0 0 3px rgba(143, 61, 46, 0.12);
         }
 
         .results {
-            background: #f8f9fa;
+            background: #fff4e8;
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 20px;
@@ -116,7 +117,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #ead9c8;
         }
 
         .result-item:last-child {
@@ -125,49 +126,29 @@
 
         .ingredient-name {
             font-weight: 600;
-            color: #333;
+            color: #3d2d26;
             font-size: 1.05em;
         }
 
         .ingredient-quantity {
-            color: #667eea;
+            color: #b94f2f;
             font-weight: 700;
             font-size: 1.3em;
         }
 
-        .total-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .total-label {
-            font-size: 0.95em;
-            opacity: 0.9;
-            margin-bottom: 8px;
-        }
-
-        .total-value {
-            font-size: 2em;
-            font-weight: bold;
-        }
-
         .info-box {
-            background: #e7f3ff;
-            border-left: 4px solid #667eea;
+            background: #fff1df;
+            border-left: 4px solid #b94f2f;
             padding: 15px;
             border-radius: 5px;
-            color: #555;
+            color: #654d40;
             font-size: 0.95em;
             margin-top: 20px;
             line-height: 1.6;
         }
 
         .info-box strong {
-            color: #333;
+            color: #3d2d26;
         }
     </style>
 </head>
@@ -178,7 +159,7 @@
             <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
         </div>
 
-        <h1 data-i18n="title">🧀 Soirée Raclette</h1>
+        <h1 data-i18n="title">Soirée Raclette</h1>
         <p class="subtitle" data-i18n="subtitle">Calculateur d'ingrédients</p>
 
         <div class="input-section">
@@ -201,50 +182,39 @@
             </div>
         </div>
 
-        <div class="total-section">
-            <div class="total-label" data-i18n="total-label">Poids total à acheter :</div>
-            <div class="total-value"><span id="total">2 600</span> g</div>
-            <div style="font-size: 0.9em; margin-top: 5px;">(<span id="totalKg">2,6</span> kg)</div>
-        </div>
-
         <div class="info-box">
             <strong data-i18n="info-ratios">Ratios par personne :</strong><br>
             <span data-i18n="info-cheese">• Fromage Raclette : 150g</span><br>
             <span data-i18n="info-charcuterie">• Charcuterie : 125g</span><br>
-            <span data-i18n="info-potatoes">• Pommes de terre : 225g</span><br>
-            <strong style="display: block; margin-top: 10px;" data-i18n="info-total">Total par personne : 500g</strong>
+            <span data-i18n="info-potatoes">• Pommes de terre : 225g</span>
         </div>
     </div>
 
     <script>
         const translations = {
             fr: {
-                'title': '🧀 Soirée Raclette',
+                'title': 'Soirée Raclette',
                 'subtitle': 'Calculateur d\'ingrédients',
                 'label-people': 'Nombre de personnes :',
                 'ingredient-cheese': '🧀 Fromage Raclette',
                 'ingredient-charcuterie': '🍖 Charcuterie',
                 'ingredient-potatoes': '🥔 Pommes de terre',
-                'total-label': 'Poids total à acheter :',
                 'info-ratios': 'Ratios par personne :',
                 'info-cheese': '• Fromage Raclette : 150g',
                 'info-charcuterie': '• Charcuterie : 125g',
-                'info-potatoes': '• Pommes de terre : 225g',
-                'info-total': 'Total par personne : 500g'
+                'info-potatoes': '• Pommes de terre : 225g'
             },
             en: {
-                'title': '🧀 Raclette Party',
+                'title': 'Raclette Party',
                 'subtitle': 'Ingredient Calculator',
                 'label-people': 'Number of people:',
                 'ingredient-cheese': '🧀 Raclette Cheese',
                 'ingredient-charcuterie': '🍖 Charcuterie',
                 'ingredient-potatoes': '🥔 Potatoes',
-                'total-label': 'Total weight to buy:',
                 'info-ratios': 'Per person ratios:',
                 'info-cheese': '• Raclette cheese: 150g',
                 'info-charcuterie': '• Charcuterie: 125g',
-                'info-potatoes': '• Potatoes: 225g',
-                'info-total': 'Total per person: 500g'
+                'info-potatoes': '• Potatoes: 225g'
             }
         };
 
@@ -256,9 +226,6 @@
         const cheeseSpan = document.getElementById('cheese');
         const charcuterieSpan = document.getElementById('charcuterie');
         const potatoesSpan = document.getElementById('potatoes');
-        const totalSpan = document.getElementById('total');
-        const totalKgSpan = document.getElementById('totalKg');
-
         let currentLanguage = localStorage.getItem('raclette-language') || 'fr';
 
         function formatNumber(num, lang) {
@@ -275,18 +242,9 @@
             const cheese = numPeople * CHEESE_PER_PERSON;
             const charcuterie = numPeople * CHARCUTERIE_PER_PERSON;
             const potatoes = numPeople * POTATOES_PER_PERSON;
-            const total = cheese + charcuterie + potatoes;
-
             cheeseSpan.textContent = formatNumber(cheese, currentLanguage);
             charcuterieSpan.textContent = formatNumber(charcuterie, currentLanguage);
             potatoesSpan.textContent = formatNumber(potatoes, currentLanguage);
-            totalSpan.textContent = formatNumber(total, currentLanguage);
-            
-            if (currentLanguage === 'fr') {
-                totalKgSpan.textContent = (total / 1000).toFixed(2).replace('.', ',');
-            } else {
-                totalKgSpan.textContent = (total / 1000).toFixed(2);
-            }
         }
 
         function setLanguage(lang) {
